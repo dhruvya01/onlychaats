@@ -26,8 +26,8 @@ import {
 import confetti from 'canvas-confetti';
 import { useEffect, useState } from 'react';
 
-// Proper Vite import for the logo
-import logoImg from './images/logo.jpeg';
+// Import logo as a bundled asset
+import logoImg from './images/logo.png';
 
 // For menu images, we're using Unsplash placeholders. 
 // To use local images, move them to src/images/ and use:
