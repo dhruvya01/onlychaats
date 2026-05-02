@@ -7,13 +7,21 @@ import {
   Instagram,
   ListChecks,
   Medal,
-  Menu,
+  Menu as MenuIcon,
   MessageCircle,
   Send,
   Star,
   User,
   Utensils,
   X,
+  Plus,
+  Minus,
+  Trash2,
+  Gift,
+  MapPin,
+  TrendingUp,
+  Clock,
+  ShoppingCart,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { useEffect, useState } from 'react';
@@ -101,12 +109,18 @@ const menuItems = [
 ];
 
 export default function App() {
+  const [view, setView] = useState<'home' | 'quest'>('home');
   const [couponCode, setCouponCode] = useState('CHAAT15');
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([false, false, false]);
   const [countdown, setCountdown] = useState<number | null>(null);
   const [showCoupon, setShowCoupon] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const startQuest = () => {
+    setView('quest');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleQuestClick = (index: number) => {
     setCompletedSteps((prev) => {
@@ -184,7 +198,162 @@ export default function App() {
 
   return (
     <div className="bg-surface-bright text-on-surface min-h-screen font-epilogue selection:bg-secondary selection:text-black">
-      <main className="max-w-[540px] mx-auto px-4 py-6 relative">
+      {view === 'home' ? (
+        /* COOL DASHBOARD-STYLE HOME PAGE */
+        <div className="min-h-screen bg-surface-bright p-4 sm:p-6 md:p-8 font-epilogue selection:bg-secondary transition-all duration-500">
+          <div className="max-w-[1200px] mx-auto">
+            
+            {/* Top Navigation Row */}
+            <div className="flex justify-between items-center mb-8 gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-white border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                  <img src={logoImg} alt="logo" className="w-8 h-8 object-contain" />
+                </div>
+                <h1 className="font-black text-2xl uppercase tracking-tighter hidden sm:block">ONLY CHAATS</h1>
+              </div>
+              <div className="flex gap-3">
+                <button 
+                  onClick={() => setIsMenuOpen(true)}
+                  className="bg-white border-[3px] border-black px-6 py-2 font-black uppercase text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex items-center gap-2"
+                >
+                  <MenuIcon size={18} /> MENU
+                </button>
+              </div>
+            </div>
+
+            {/* BENTO DASHBOARD GRID */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+              
+              {/* HERO SECTION (6 cols) */}
+              <div className="md:col-span-8 bg-primary border-[4px] border-black p-8 sm:p-12 relative overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] min-h-[400px] flex flex-col justify-end">
+                <div className="absolute top-8 right-8 w-40 h-40 sm:w-64 sm:h-64 opacity-20 pointer-events-none">
+                   <img src={logoImg} alt="watermark" className="w-full h-full object-contain filter invert" />
+                </div>
+                <div className="relative z-10">
+                  <span className="bg-black text-white px-3 py-1 font-bold uppercase text-xs tracking-widest mb-4 inline-block">ESTD 2024</span>
+                  <h2 className="text-white font-black text-5xl sm:text-7xl uppercase leading-[0.85] tracking-tighter mb-6">
+                    FLAVOR <br />DASHBOARD
+                  </h2>
+                  <p className="text-white/90 font-bold text-lg max-w-md mb-8">
+                    Your central hub for the boldest, tangiest, and most authentic chaat experience in town.
+                  </p>
+                  <button 
+                    onClick={startQuest}
+                    className="bg-secondary text-black border-[4px] border-black px-8 py-4 font-black uppercase text-xl sm:text-2xl flex items-center gap-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group"
+                  >
+                    START REWARD QUEST <ArrowRight size={28} strokeWidth={4} className="group-hover:translate-x-2 transition-transform" />
+                  </button>
+                </div>
+              </div>
+
+              {/* LIVE STATS (4 cols) */}
+              <div className="md:col-span-4 grid grid-cols-1 gap-6">
+                <div className="bg-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center gap-5">
+                  <div className="w-16 h-16 bg-tertiary border-[3px] border-black flex items-center justify-center text-white">
+                    <TrendingUp size={32} strokeWidth={3} />
+                  </div>
+                  <div>
+                    <div className="font-black text-3xl uppercase tracking-tighter leading-none">10K+</div>
+                    <div className="font-bold text-sm uppercase text-gray-500">Plates Served</div>
+                  </div>
+                </div>
+                
+                <div className="bg-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center gap-5">
+                  <div className="w-16 h-16 bg-secondary border-[3px] border-black flex items-center justify-center text-black">
+                    <Star size={32} strokeWidth={3} />
+                  </div>
+                  <div>
+                    <div className="font-black text-3xl uppercase tracking-tighter leading-none">4.9/5</div>
+                    <div className="font-bold text-sm uppercase text-gray-500">Customer Rating</div>
+                  </div>
+                </div>
+
+                <div className="bg-black border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex items-center gap-5 text-white">
+                  <div className="w-16 h-16 bg-primary border-[3px] border-white flex items-center justify-center">
+                    <Gift size={32} strokeWidth={3} />
+                  </div>
+                  <div>
+                    <div className="font-black text-2xl uppercase tracking-tighter leading-none">ACTIVE</div>
+                    <div className="font-bold text-sm uppercase text-gray-400">Reward Vouchers</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* QUICK LINKS GRID */}
+              <div className="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Menu Card */}
+                <button 
+                  onClick={() => setIsMenuOpen(true)}
+                  className="bg-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:bg-surface transition-colors group flex flex-col justify-between h-48"
+                >
+                  <MenuIcon size={40} className="text-primary group-hover:rotate-12 transition-transform" strokeWidth={3} />
+                  <div>
+                    <div className="font-black text-2xl uppercase tracking-tight">Full Menu</div>
+                    <div className="text-sm font-bold text-gray-500">Discover authentic flavors</div>
+                  </div>
+                </button>
+
+                {/* Tracking/Stats Card */}
+                <div className="bg-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between h-48 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+                  <Clock size={40} className="text-tertiary" strokeWidth={3} />
+                  <div>
+                    <div className="font-black text-2xl uppercase tracking-tight">Open Now</div>
+                    <div className="text-sm font-bold text-gray-500">12:00 PM - 10:00 PM</div>
+                  </div>
+                </div>
+
+                {/* Location Card */}
+                <a 
+                  href="https://maps.app.goo.gl/..." 
+                  target="_blank" 
+                  className="bg-secondary border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:-translate-y-1 transition-transform group flex flex-col justify-between h-48"
+                >
+                  <MapPin size={40} className="text-black group-hover:scale-125 transition-transform" strokeWidth={3} />
+                  <div>
+                    <div className="font-black text-2xl uppercase tracking-tight">Locate Us</div>
+                    <div className="text-sm font-bold text-black/60">Find the nearest outlet</div>
+                  </div>
+                </a>
+
+                {/* Social Card */}
+                <a 
+                  href="https://www.instagram.com/onlychaats/" 
+                  target="_blank" 
+                  className="bg-black text-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:-translate-y-1 transition-transform group flex flex-col justify-between h-48"
+                >
+                  <Instagram size={40} className="text-secondary group-hover:rotate-12 transition-transform" strokeWidth={3} />
+                  <div>
+                    <div className="font-black text-2xl uppercase tracking-tight">Instagram</div>
+                    <div className="text-sm font-bold text-gray-400">Join the community</div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+
+            {/* Footer Badge Row */}
+            <div className="mt-12 pt-8 border-t-[4px] border-black flex flex-col sm:flex-row justify-between items-center gap-4 opacity-70">
+              <div className="font-black uppercase tracking-widest text-sm">© 2025 ONLY CHAATS • BOLD FLAVORS ONLY</div>
+              <div className="flex gap-4">
+                 <div className="font-bold uppercase text-xs px-2 py-1 bg-white border-2 border-black">HYGIENIC</div>
+                 <div className="font-bold uppercase text-xs px-2 py-1 bg-white border-2 border-black">AUTHENTIC</div>
+                 <div className="font-bold uppercase text-xs px-2 py-1 bg-white border-2 border-black">CHATPATA</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ) : (
+        /* QUEST CONTENT (EXISTING) */
+        <>
+          <main className="max-w-[540px] mx-auto px-4 py-6 relative">
+            <button 
+              onClick={() => setView('home')}
+              className="absolute top-4 left-4 z-50 w-10 h-10 bg-white border-[3px] border-black flex items-center justify-center hover:bg-secondary transition-colors neo-brutalist-button shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:translate-x-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)]"
+              aria-label="Back to Home"
+            >
+              <Home size={20} strokeWidth={3} className="text-black" />
+            </button>
         {/* Menu Button Top Right */}
         <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
           {/* Cool neo-brutalist badge heading for the menu */}
@@ -196,7 +365,7 @@ export default function App() {
           </div>
           
           <button onClick={() => setIsMenuOpen(true)} className="w-10 h-10 bg-white border-[3px] border-black flex items-center justify-center hover:bg-[#a3e635] transition-colors neo-brutalist-button shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:translate-x-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] relative z-20 cursor-pointer" aria-label="Menu">
-            <Menu className="text-black" size={20} strokeWidth={3} />
+            <MenuIcon className="text-black" size={20} strokeWidth={3} />
           </button>
         </div>
 
@@ -447,8 +616,10 @@ export default function App() {
           © 2025 ONLY CHAATS.
         </div>
       </footer>
+    </>
+  )}
 
-      {/* Menu Full-Screen Overlay */}
+  {/* Menu Full-Screen Overlay */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm overflow-y-auto font-epilogue selection:bg-secondary selection:text-black">
           <div className="min-h-screen bg-[#618a5e] max-w-[540px] mx-auto relative shadow-[0_0_40px_rgba(0,0,0,0.5)] border-x-4 border-black pb-20">
