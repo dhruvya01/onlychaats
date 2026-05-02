@@ -27,8 +27,7 @@ const img7 = "https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&
 const img8 = "https://images.unsplash.com/photo-1546539782-6fc531453083?q=80&w=800&auto=format&fit=crop"; // Tamatar Chaat placeholder
 const img12 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Papdi Chaat placeholder
 const img13 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Dahi Bhalla placeholder
-// import logoImg from './images/logo.jpeg';
-const logoImg = "/logo.jpeg";
+import logoImg from './images/logo.jpeg';
 
 const menuItems = [
   {
