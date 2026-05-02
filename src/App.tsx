@@ -18,16 +18,21 @@ import {
 import confetti from 'canvas-confetti';
 import { useEffect, useState } from 'react';
 
-const img1 = "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=800&auto=format&fit=crop"; // Bhelpuri placeholder
-const img3 = "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop"; // Bun Tikki placeholder
-const img4 = "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800&auto=format&fit=crop"; // Aloo Tikki Chole placeholder
-const img5 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Jhalmuri placeholder
-const img6 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Aloo Tikki Dahi placeholder
-const img7 = "https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&w=800&auto=format&fit=crop"; // Kalari Kulcha placeholder
-const img8 = "https://images.unsplash.com/photo-1546539782-6fc531453083?q=80&w=800&auto=format&fit=crop"; // Tamatar Chaat placeholder
-const img12 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Papdi Chaat placeholder
-const img13 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Dahi Bhalla placeholder
+// Proper Vite import for the logo
 import logoImg from './images/logo.jpeg';
+
+// For menu images, we're using Unsplash placeholders. 
+// To use local images, move them to src/images/ and use:
+// import img1 from './images/img1.jpeg';
+const img1 = "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=800&auto=format&fit=crop"; // Bhelpuri
+const img3 = "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop"; // Bun Tikki
+const img4 = "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800&auto=format&fit=crop"; // Aloo Tikki Chole
+const img5 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Jhalmuri
+const img6 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Aloo Tikki Dahi
+const img7 = "https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&w=800&auto=format&fit=crop"; // Kalari Kulcha
+const img8 = "https://images.unsplash.com/photo-1546539782-6fc531453083?q=80&w=800&auto=format&fit=crop"; // Tamatar Chaat
+const img12 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Papdi Chaat
+const img13 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Dahi Bhalla
 
 const menuItems = [
   {
