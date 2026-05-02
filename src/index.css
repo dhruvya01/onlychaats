@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface-bright: #fcf9f8;
+  --color-primary: #ad1110;
+  --color-secondary: #facd1c;
+  --color-tertiary: #009669;
+  --color-on-surface: #000000;
+  --color-surface-container: #f0eded;
+
+  --font-epilogue: "Epilogue", sans-serif;
+
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+  }
+}
+
+body {
+  font-family: var(--font-epilogue);
+}
+
+.neo-brutalist-card {
+  border: 4px solid black;
+  box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 1);
+}
+
+.neo-brutalist-button {
+  border: 4px solid black;
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 1);
+  transition: all 0.1s ease;
+}
+
+.neo-brutalist-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 1);
+}
+
+.vertical-slider {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 480px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.vertical-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-card {
+  scroll-snap-align: start;
+  min-height: 420px;
+}
+
+.paper-texture {
+  background-color: #fff;
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_aCx4MoETCzYMi2qCvk-2U9RWBsPMMGlQxd14DAjdE94tTeuVnzoq8oMOtb5EtG9kE5eOj7snZnZJMk40iOKztVbm6-tRorXs7alTEkExxxvgaxNGIhZnHpGSpc4aEPTZxRNMUQnjQilYecqTTPuZmmLtqnW-FjEGbs-6VqzISvC8l4UuIIA6_cWvp92wfIZVIDicqr87EsKk8I1hwCfQpuSrf79GSqQ9Lx-rWiuhxCF0kjUSUNQEP_0usLKwfo7tHF-YBHxQdPs");
+}
