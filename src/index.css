@@ -3,6 +3,8 @@
 
 @theme {
   --color-surface-bright: #fcf9f8;
+  --color-surface: #f3f0ef;
+  --color-surface-hover: #e8e5e4;
   --color-primary: #ad1110;
   --color-secondary: #facd1c;
   --color-tertiary: #009669;
@@ -58,5 +60,23 @@ body {
 
 .paper-texture {
   background-color: #fff;
-  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_aCx4MoETCzYMi2qCvk-2U9RWBsPMMGlQxd14DAjdE94tTeuVnzoq8oMOtb5EtG9kE5eOj7snZnZJMk40iOKztVbm6-tRorXs7alTEkExxxvgaxNGIhZnHpGSpc4aEPTZxRNMUQnjQilYecqTTPuZmmLtqnW-FjEGbs-6VqzISvC8l4UuIIA6_cWvp92wfIZVIDicqr87EsKk8I1hwCfQpuSrf79GSqQ9Lx-rWiuhxCF0kjUSUNQEP_0usLKwfo7tHF-YBHxQdPs");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  opacity: 0.05;
+}
+
+/* Base card helper to manage texture overlay */
+.textured-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.textured-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
 }

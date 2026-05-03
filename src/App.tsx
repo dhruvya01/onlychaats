@@ -23,7 +23,8 @@ import {
   Clock,
   ShoppingCart,
 } from 'lucide-react';
-import confetti from 'canvas-confetti';
+import * as confettiModule from 'canvas-confetti';
+const confetti = (confettiModule as any).default || confettiModule;
 import { useEffect, useState } from 'react';
 
 // Import logo as a bundled asset
@@ -200,7 +201,7 @@ export default function App() {
     <div className="bg-surface-bright text-on-surface min-h-screen font-epilogue selection:bg-secondary selection:text-black">
       {view === 'home' ? (
         /* COOL DASHBOARD-STYLE HOME PAGE */
-        <div className="min-h-screen bg-surface-bright p-4 sm:p-6 md:p-8 font-epilogue selection:bg-secondary transition-all duration-500">
+        <div className="min-h-screen bg-surface-bright p-4 sm:p-6 md:p-8 transition-all duration-500">
           <div className="max-w-[1200px] mx-auto">
             
             {/* Top Navigation Row */}
@@ -284,7 +285,7 @@ export default function App() {
                 {/* Menu Card */}
                 <button 
                   onClick={() => setIsMenuOpen(true)}
-                  className="bg-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:bg-surface transition-colors group flex flex-col justify-between h-48"
+                  className="bg-white border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:bg-surface-hover transition-colors group flex flex-col justify-between h-48"
                 >
                   <MenuIcon size={40} className="text-primary group-hover:rotate-12 transition-transform" strokeWidth={3} />
                   <div>
@@ -304,9 +305,9 @@ export default function App() {
 
                 {/* Location Card */}
                 <a 
-                  href="https://maps.app.goo.gl/..." 
+                  href="https://www.google.com/maps/search/Only+Chaats" 
                   target="_blank" 
-                  className="bg-secondary border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:-translate-y-1 transition-transform group flex flex-col justify-between h-48"
+                  className="bg-secondary border-[4px] border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-left hover:-translate-y-1 hover:bg-surface-hover transition-all group flex flex-col justify-between h-48"
                 >
                   <MapPin size={40} className="text-black group-hover:scale-125 transition-transform" strokeWidth={3} />
                   <div>
@@ -345,8 +346,8 @@ export default function App() {
         </div>
       ) : (
         /* QUEST CONTENT (EXISTING) */
-        <>
-          <main className="max-w-[540px] mx-auto px-4 py-6 relative">
+        <div className="min-h-screen bg-surface-bright transition-all duration-500 relative">
+          <main className="max-w-[540px] mx-auto px-4 py-12 relative">
             <button 
               onClick={() => setView('home')}
               className="absolute top-4 left-4 z-50 w-10 h-10 bg-white border-[3px] border-black flex items-center justify-center hover:bg-secondary transition-colors neo-brutalist-button shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:translate-x-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)]"
@@ -354,20 +355,24 @@ export default function App() {
             >
               <Home size={20} strokeWidth={3} className="text-black" />
             </button>
-        {/* Menu Button Top Right */}
-        <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
-          {/* Cool neo-brutalist badge heading for the menu */}
-          <div className="hidden min-[380px]:flex pointer-events-none animate-[bounce_2s_infinite]">
-            <div className="bg-[#facd1c] text-black px-2 py-1 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-[-4deg] flex items-center gap-1">
-              <span className="font-black text-[11px] uppercase tracking-widest whitespace-nowrap">Menu Here</span>
-              <ArrowRight size={14} strokeWidth={4} className="text-black" />
+            
+            {/* Menu Button Top Right */}
+            <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
+              <div className="hidden min-[380px]:flex pointer-events-none animate-[bounce_2s_infinite]">
+                <div className="bg-[#facd1c] text-black px-2 py-1 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-[-4deg] flex items-center gap-1">
+                  <span className="font-black text-[11px] uppercase tracking-widest whitespace-nowrap">Menu Here</span>
+                  <ArrowRight size={14} strokeWidth={4} className="text-black" />
+                </div>
+              </div>
+              
+              <button 
+                onClick={() => setIsMenuOpen(true)} 
+                className="w-10 h-10 bg-white border-[3px] border-black flex items-center justify-center hover:bg-[#a3e635] transition-colors neo-brutalist-button shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:translate-x-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] relative z-20 cursor-pointer" 
+                aria-label="Menu"
+              >
+                <MenuIcon className="text-black" size={20} strokeWidth={3} />
+              </button>
             </div>
-          </div>
-          
-          <button onClick={() => setIsMenuOpen(true)} className="w-10 h-10 bg-white border-[3px] border-black flex items-center justify-center hover:bg-[#a3e635] transition-colors neo-brutalist-button shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:translate-x-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] relative z-20 cursor-pointer" aria-label="Menu">
-            <MenuIcon className="text-black" size={20} strokeWidth={3} />
-          </button>
-        </div>
 
         {/* Hero & Logo Section */}
         <section className="text-center mb-10">
@@ -437,15 +442,15 @@ export default function App() {
             <div className="relative flex-1">
               {/* Task 1: Yellow */}
               <div className={`absolute top-0 left-0 w-full h-full transition-all duration-300 ${currentStep === 0 ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 -translate-x-4 pointer-events-none'}`}>
-                <div className="neo-brutalist-card bg-gradient-to-br from-[#007b55] to-[#004d35] paper-texture mix-blend-multiply border-[3px] border-black p-5 flex flex-col items-center justify-center text-center overflow-hidden h-full">
-                  <div className="w-16 h-16 bg-white border-[3px] border-black flex items-center justify-center mb-6 transform -rotate-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="neo-brutalist-card bg-gradient-to-br from-[#007b55] to-[#004d35] textured-card border-[3px] border-black p-5 flex flex-col items-center justify-center text-center overflow-hidden h-full">
+                  <div className="w-16 h-16 bg-white border-[3px] border-black flex items-center justify-center mb-6 transform -rotate-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative z-10">
                     <Instagram className="text-black" size={28} strokeWidth={3} />
                   </div>
-                  <h3 className="font-extrabold text-2xl mb-2 text-white uppercase leading-tight tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                  <h3 className="font-extrabold text-2xl mb-2 text-white uppercase leading-tight tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] relative z-10">
                     Join our Insta gang 📸
                   </h3>
-                  <p className="mb-6 text-white/90 font-semibold drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)]">@onlychaats</p>
-                  <a onClick={() => handleQuestClick(0)} href="https://www.instagram.com/onlychaats/" target="_blank" rel="noopener noreferrer" className="mt-auto neo-brutalist-button w-full py-3 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-200 inline-block">
+                  <p className="mb-6 text-white/90 font-semibold drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)] relative z-10">@onlychaats</p>
+                  <a onClick={() => handleQuestClick(0)} href="https://www.instagram.com/onlychaats/" target="_blank" rel="noopener noreferrer" className="mt-auto neo-brutalist-button w-full py-3 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-200 inline-block relative z-10">
                     {completedSteps[0] ? 'Followed ✓' : 'Follow Now'}
                   </a>
                 </div>
@@ -453,15 +458,15 @@ export default function App() {
 
               {/* Task 2: Green */}
               <div className={`absolute top-0 left-0 w-full h-full transition-all duration-300 ${currentStep === 1 ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-4 pointer-events-none'}`}>
-                <div className="neo-brutalist-card bg-gradient-to-br from-[#007b55] to-[#004d35] paper-texture mix-blend-multiply border-[3px] border-black p-5 flex flex-col items-center justify-center text-center overflow-hidden h-full">
-                  <div className="w-16 h-16 bg-white border-[3px] border-black flex items-center justify-center mb-6 transform rotate-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="neo-brutalist-card bg-gradient-to-br from-[#007b55] to-[#004d35] textured-card border-[3px] border-black p-5 flex flex-col items-center justify-center text-center overflow-hidden h-full">
+                  <div className="w-16 h-16 bg-white border-[3px] border-black flex items-center justify-center mb-6 transform rotate-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative z-10">
                     <Utensils className="text-black" size={28} strokeWidth={3} />
                   </div>
-                  <h3 className="font-extrabold text-2xl mb-2 text-white uppercase leading-tight tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                  <h3 className="font-extrabold text-2xl mb-2 text-white uppercase leading-tight tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] relative z-10">
                     Food this good deserves a spotlight 😋
                   </h3>
-                  <p className="mb-6 text-white/90 font-semibold drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)]">Post a story and tag @onlychaats</p>
-                  <a onClick={() => handleQuestClick(1)} href="https://www.instagram.com/onlychaats/" target="_blank" rel="noopener noreferrer" className="mt-auto neo-brutalist-button w-full py-3 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-200 inline-block">
+                  <p className="mb-6 text-white/90 font-semibold drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)] relative z-10">Post a story and tag @onlychaats</p>
+                  <a onClick={() => handleQuestClick(1)} href="https://www.instagram.com/onlychaats/" target="_blank" rel="noopener noreferrer" className="mt-auto neo-brutalist-button w-full py-3 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-200 inline-block relative z-10">
                     {completedSteps[1] ? 'Opened ✓' : 'Open Instagram'}
                   </a>
                 </div>
@@ -469,15 +474,15 @@ export default function App() {
 
               {/* Task 3: Red */}
               <div className={`absolute top-0 left-0 w-full h-full transition-all duration-300 ${currentStep === 2 ? 'opacity-100 translate-x-0 z-10' : 'opacity-0 translate-x-4 pointer-events-none'}`}>
-                <div className="neo-brutalist-card bg-gradient-to-br from-[#007b55] to-[#004d35] paper-texture mix-blend-multiply border-[3px] border-black p-5 flex flex-col items-center justify-center text-center overflow-hidden h-full">
-                  <div className="w-16 h-16 bg-white border-[3px] border-black flex items-center justify-center mb-6 transform -rotate-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="neo-brutalist-card bg-gradient-to-br from-[#007b55] to-[#004d35] textured-card border-[3px] border-black p-5 flex flex-col items-center justify-center text-center overflow-hidden h-full">
+                  <div className="w-16 h-16 bg-white border-[3px] border-black flex items-center justify-center mb-6 transform -rotate-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative z-10">
                     <Send className="text-black ml-2 mt-1" size={28} strokeWidth={3} />
                   </div>
-                  <h3 className="font-extrabold text-2xl mb-2 text-white uppercase leading-tight tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                  <h3 className="font-extrabold text-2xl mb-2 text-white uppercase leading-tight tracking-tight drop-shadow-[2px_2px_0px_rgba(0,0,0,1)] relative z-10">
                     Claim your reward
                   </h3>
-                  <p className="mb-6 text-white/90 font-semibold drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)]">Send screenshot of task one and two on WhatsApp</p>
-                  <a onClick={() => handleQuestClick(2)} href="https://wa.me/917780956163?text=Hey!%20I've%20completed%20all%203%20steps%20for%20my%20Only%20Chaats%20reward%20%F0%9F%8C%9F" target="_blank" rel="noopener noreferrer" className="mt-auto neo-brutalist-button w-full py-3 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-200 inline-block">
+                  <p className="mb-6 text-white/90 font-semibold drop-shadow-[1px_1px_0px_rgba(0,0,0,0.5)] relative z-10">Send screenshot of task one and two on WhatsApp</p>
+                  <a onClick={() => handleQuestClick(2)} href="https://wa.me/917780956163?text=Hey!%20I've%20completed%20all%203%20steps%20for%20my%20Only%20Chaats%20reward%20%F0%9F%8C%9F" target="_blank" rel="noopener noreferrer" className="mt-auto neo-brutalist-button w-full py-3 bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-black hover:text-white transition-colors duration-200 inline-block relative z-10">
                     {completedSteps[2] ? 'Messaged ✓' : 'WhatsApp Us'}
                   </a>
                 </div>
@@ -595,29 +600,26 @@ export default function App() {
 
           </div>
         </section>
-      </main>
+          </main>
 
-      {/* Footer */}
-      <footer className="w-full py-10 px-4 flex flex-col justify-center items-center gap-4 bg-black text-white mt-12 border-t-[6px] border-primary neo-brutalist-card !border-l-0 !border-r-0 !border-b-0 !shadow-none">
-
-        
-        <div className="mt-2">
-          <a 
-            href="https://reguluslabs.in" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="font-black uppercase text-[10px] tracking-[0.2em] bg-white text-black px-3 py-1 border-2 border-black shadow-[3px_3px_0px_0px_rgba(173,17,16,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
-          >
-            made by Reguluslabs.in
-          </a>
+          {/* Footer */}
+          <footer className="w-full py-10 px-4 flex flex-col justify-center items-center gap-4 bg-black text-white mt-12 border-t-[6px] border-primary">
+            <div className="mt-2">
+              <a 
+                href="https://reguluslabs.in" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="font-black uppercase text-[10px] tracking-[0.2em] bg-white text-black px-3 py-1 border-2 border-black shadow-[3px_3px_0px_0px_rgba(173,17,16,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all"
+              >
+                made by Reguluslabs.in
+              </a>
+            </div>
+            <div className="font-bold uppercase text-[10px] opacity-50 mt-4">
+              © 2025 ONLY CHAATS.
+            </div>
+          </footer>
         </div>
-
-        <div className="font-bold uppercase text-[10px] opacity-50 mt-4">
-          © 2025 ONLY CHAATS.
-        </div>
-      </footer>
-    </>
-  )}
+      )}
 
   {/* Menu Full-Screen Overlay */}
       {isMenuOpen && (
