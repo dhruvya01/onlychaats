@@ -24,15 +24,16 @@ import logoImg from './images/logo.png';
 // For menu images, we're using Unsplash placeholders. 
 // To use local images, move them to src/images/ and use:
 // import img1 from './images/img1.jpeg';
-const img1 = "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=800&auto=format&fit=crop"; // Bhelpuri
-const img3 = "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop"; // Bun Tikki
-const img4 = "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800&auto=format&fit=crop"; // Aloo Tikki Chole
-const img5 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Jhalmuri
-const img6 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Aloo Tikki Dahi
-const img7 = "https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&w=800&auto=format&fit=crop"; // Kalari Kulcha
-const img8 = "https://images.unsplash.com/photo-1546539782-6fc531453083?q=80&w=800&auto=format&fit=crop"; // Tamatar Chaat
-const img12 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop"; // Papdi Chaat
-const img13 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop"; // Dahi Bhalla
+import img1 from './images/img1.jpeg';
+import img2 from './images/img2.jpeg';
+import img3 from './images/img3.jpeg';
+import img4 from './images/img4.jpeg';
+import img5 from './images/img5.jpeg';
+import img6 from './images/img6.jpeg';
+import img7 from './images/img7.jpeg';
+import img8 from './images/img8.jpeg';
+import img9 from './images/img9.jpeg';
+import img10 from './images/img10.jpeg';
 
 const menuItems = [
   {
@@ -40,14 +41,14 @@ const menuItems = [
     desc: "Crispy papdi layered with creamy yogurt, tangy tamarind chutney, refreshing coriander chutney, crunchy beetroot, juicy anar, a hint of ginger, and finished with chaat masala for a perfect balance of sweet, spicy, and tangy flavors.",
     bgColor: "bg-white",
     textColor: "text-black",
-    image: img12
+    image: img1
   },
   {
     title: "Delhi Dahi Bhalla",
     desc: "Soft Urad Fritters Soaked in Sweet Creamy Curd, Topped with Tamarind Chutney, Coriander Chutney, Pomegranate Seeds, Beetroot Julienne, and Tangy Spice Blend.",
     bgColor: "bg-secondary",
     textColor: "text-black",
-    image: img13
+    image: img2
   },
   {
     title: "Dehradun Bun Tikki",
@@ -68,35 +69,42 @@ const menuItems = [
     desc: "Crispy fried aloo tikki topped with curd, tangy tamarind saunth chutney, coriander chutney and chatpata spice blend.",
     bgColor: "bg-white",
     textColor: "text-black",
-    image: img6
+    image: img5
   },
   {
     title: "Kolkata Jhalmuri",
     desc: "Puffed rice tossed with boiled potato, kala chana, tomato, onion and cucumber, spiked with green chillies, lemon juice, a drizzle of mustard oil, crunchy Indian namkeen and fresh coriander for a fiery, tangy crunch.",
     bgColor: "bg-secondary",
     textColor: "text-black",
-    image: img5
+    image: img6
   },
   {
     title: "Bombay Chi Bhelpuri",
     desc: "Crispy golden aloo tikki topped with slow cooked rustic spiced chole, creamy curd, tangy tamarind chutney, fresh coriander chutney and chaat masala. A perfect balance of spice, crunch and comfort, perfection for winters.",
     bgColor: "bg-tertiary",
     textColor: "text-white",
-    image: img1
+    image: img7
   },
   {
     title: "Jammu Kalari Kulcha",
     desc: "Authentic Kalari cheese from Ramnagar Udhampur, Jammu, pan seared to perfection, with Onion Slices sandwiched in sesame buns with flavourful chutneys and a tangy chatpata masala.",
     bgColor: "bg-primary",
     textColor: "text-white",
-    image: img7
+    image: img8
   },
   {
     title: "Banarasi Tamatar Chaat",
     desc: "Slow cooked mushy red tomatoes, ginger, green chillies and aromatic spices, balanced with tangy tamarind and jaggery syrup, topped with crispy crushed papdi and fresh coriander warm, bold and deeply comforting in every bite.",
     bgColor: "bg-white",
     textColor: "text-black",
-    image: img8
+    image: img9
+  },
+  {
+    title: "Amritsari Aam Papad Chaat",
+    desc: "Chewy mango aam papad tossed with crushed papdi, tamarind chutney and black salt-sweet, sour and irresistibly chatpata, just like the streets of Amritsar.",
+    bgColor: "bg-secondary",
+    textColor: "text-black",
+    image: img10
   }
 ];
 
@@ -198,8 +206,8 @@ export default function App() {
             {/* Top Navigation Row */}
             <div className="flex justify-between items-center mb-8 gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-white border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
-                  <img src={logoImg} alt="logo" className="w-8 h-8 object-contain" />
+                <div className="w-12 h-12 bg-white border-[3px] border-black rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center overflow-hidden">
+                  <img src={logoImg} alt="logo" className="w-full h-full object-contain" />
                 </div>
                 <h1 className="font-black text-2xl uppercase tracking-tighter hidden sm:block">ONLY CHAATS</h1>
               </div>
