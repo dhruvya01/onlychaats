@@ -24,16 +24,17 @@ import logoImg from './images/logo.png';
 // For menu images, we're using Unsplash placeholders. 
 // To use local images, move them to src/images/ and use:
 // import img1 from './images/img1.jpeg';
-import img1 from './images/img1.jpeg';
-import img2 from './images/img2.jpeg';
-import img3 from './images/img3.jpeg';
-import img4 from './images/img4.jpeg';
-import img5 from './images/img5.jpeg';
-import img6 from './images/img6.jpeg';
-import img7 from './images/img7.jpeg';
-import img8 from './images/img8.jpeg';
-import img9 from './images/img9.jpeg';
-import img10 from './images/img10.jpeg';
+// Menu images via Unsplash (replace with local files once upload issue is resolved)
+const img1 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop";
+const img2 = "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800&auto=format&fit=crop";
+const img3 = "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop";
+const img4 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop";
+const img5 = "https://images.unsplash.com/photo-1546539782-6fc531453083?q=80&w=800&auto=format&fit=crop";
+const img6 = "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=800&auto=format&fit=crop";
+const img7 = "https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&w=800&auto=format&fit=crop";
+const img8 = "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?q=80&w=800&auto=format&fit=crop";
+const img9 = "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=800&auto=format&fit=crop";
+const img10 = "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop";
 
 const menuItems = [
   {
