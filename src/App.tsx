@@ -1,30 +1,21 @@
 import {
   ArrowRight,
-  Bell,
   Check,
-  ClipboardCheck,
   Home,
   Instagram,
   ListChecks,
-  Medal,
   Menu as MenuIcon,
   MessageCircle,
   Send,
   Star,
-  User,
   Utensils,
   X,
-  Plus,
-  Minus,
-  Trash2,
   Gift,
   MapPin,
   TrendingUp,
   Clock,
-  ShoppingCart,
 } from 'lucide-react';
-import * as confettiModule from 'canvas-confetti';
-const confetti = (confettiModule as any).default || confettiModule;
+import confetti from 'canvas-confetti';
 import { useEffect, useState } from 'react';
 
 // Import logo as a bundled asset
