@@ -12,6 +12,9 @@ export const img7 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v17778023
 export const img8 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802305/img8_tvw3ih.jpg";
 export const img9 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802307/img9_s7oqbg.jpg";
 export const img10 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802306/img10_pba383.jpg";
+export const img11 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777804440/img11_die19h.jpg";
+export const img12 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777804440/img_12_fry4fx.jpg";
+export const img13 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777804440/img13_zcjmlt.jpg";
 
 export const menuItems = [
   {
@@ -83,5 +86,26 @@ export const menuItems = [
     bgColor: "bg-secondary",
     textColor: "text-black",
     image: img10
+  },
+  {
+    title: "Goan Kokum Sharbat",
+    desc: "Goa-style tangy, refreshing kokum sharbat made with kokum extract, soaked basil seeds, sugar, black salt, roasted cumin, slice of lime and mint.",
+    bgColor: "bg-tertiary",
+    textColor: "text-white",
+    image: img11
+  },
+  {
+    title: "South Indian Buttermilk",
+    desc: "South India-style buttermilk made with churned curd, water, salt, curry leaves coriander, ginger, asafoetida (hing) and a light mustard seed tempering.",
+    bgColor: "bg-primary",
+    textColor: "text-white",
+    image: img12
+  },
+  {
+    title: "Zesty Jaljeera",
+    desc: "Zesty jaljeera with lemon, spiced with roasted cumin, black salt, boondi and fresh mint for a refreshing digestive kick.",
+    bgColor: "bg-white",
+    textColor: "text-black",
+    image: img13
   }
 ];
