@@ -660,11 +660,6 @@ export default function App() {
                         src={item.image} 
                         alt={item.title} 
                         className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" 
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          if (target.src.includes('img12')) return;
-                          target.src = img12;
-                        }}
                       />
                     </div>
                   )}
