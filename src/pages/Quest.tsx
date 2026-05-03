@@ -19,7 +19,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
 import { logoImg } from '../constants';
 
-export default function Quest() {
+export default function Tasks() {
   const [couponCode, setCouponCode] = useState('');
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([false, false, false]);
@@ -36,7 +36,7 @@ export default function Quest() {
     setCouponCode(result);
   }, []);
 
-  const handleQuestClick = (index: number) => {
+  const handleTaskClick = (index: number) => {
     setCompletedSteps((prev) => {
       const next = [...prev];
       next[index] = true;
@@ -146,7 +146,7 @@ export default function Quest() {
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black border-[3px] border-black flex items-center justify-center -rotate-3 text-white shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
                   <ListChecks size={20} sm:size={24} strokeWidth={3} />
                 </div>
-                <h2 className="font-black text-xl sm:text-3xl uppercase tracking-tighter">Your Journey</h2>
+                <h2 className="font-black text-xl sm:text-3xl uppercase tracking-tighter">Tasks</h2>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2">
                 {[0, 1, 2].map((idx) => (
@@ -176,7 +176,7 @@ export default function Quest() {
                     <p className="font-bold text-gray-500 text-base sm:text-lg mb-6 sm:mb-8 italic">join our insta @onlychaats</p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a 
-                        onClick={() => handleQuestClick(0)} 
+                        onClick={() => handleTaskClick(0)} 
                         href="https://www.instagram.com/onlychaats/" 
                         target="_blank" 
                         rel="noreferrer"
@@ -204,7 +204,7 @@ export default function Quest() {
                     <p className="font-bold text-gray-500 text-base sm:text-lg mb-6 sm:mb-8 italic leading-tight">Food this good deserves a spotlight 😋<br/>Post a story and tag @onlychaats</p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a 
-                        onClick={() => handleQuestClick(1)} 
+                        onClick={() => handleTaskClick(1)} 
                         href="https://www.instagram.com/onlychaats/" 
                         target="_blank" 
                         rel="noreferrer"
@@ -238,7 +238,7 @@ export default function Quest() {
                     <p className="font-bold text-gray-500 text-base sm:text-lg mb-6 sm:mb-8 italic text-red-500">WhatsApp us the screenshots of step 1 and 2.</p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a 
-                        onClick={() => handleQuestClick(2)} 
+                        onClick={() => handleTaskClick(2)} 
                         href="https://wa.me/917780956163?text=Hey!%20I've%20completed%20all%203%20steps%20for%20my%20Only%20Chaats%20reward%20%F0%9F%8C%9F" 
                         target="_blank" 
                         rel="noreferrer"
@@ -267,7 +267,7 @@ export default function Quest() {
               <div className="w-8 h-8 bg-secondary border-[3px] border-black flex items-center justify-center rotate-3">
                 <Star className="text-black" size={16} strokeWidth={3} fill="currentColor" />
               </div>
-              <h2 className="font-black text-lg sm:text-xl uppercase tracking-tight">Reward Hub</h2>
+              <h2 className="font-black text-lg sm:text-xl uppercase tracking-tight">Collect Your Reward Here</h2>
             </div>
 
             <div className="bg-secondary p-1 border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
@@ -309,6 +309,9 @@ export default function Quest() {
               <h2 className="font-black text-lg sm:text-xl uppercase tracking-tight">Quick Links</h2>
             </div>
             <div className="space-y-2">
+              <a href="https://wa.me/917780956163?text=Hey!%20I'm%20interested%20in%20bulk%20party%20orders" target="_blank" rel="noreferrer" className="flex items-center justify-between bg-[#25D366] text-white p-3.5 border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase text-xs hover:shadow-none translate-y-0 hover:translate-y-1 hover:translate-x-1 transition-all">
+                ONLY BULK ORDERS <MessageCircle size={16} strokeWidth={3} fill="currentColor" />
+              </a>
               <a href="https://www.swiggy.com/menu/1199252?source=sharing" target="_blank" rel="noreferrer" className="flex items-center justify-between bg-[#FC8019] text-white p-3.5 border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase text-xs hover:shadow-none translate-y-0 hover:translate-y-1 hover:translate-x-1 transition-all">
                 SWIGGY <ArrowRight size={16} />
               </a>
@@ -347,7 +350,7 @@ export default function Quest() {
                   WINNER REWARDED!
                 </div>
                 
-                <h3 className="font-black text-3xl sm:text-4xl uppercase tracking-tighter mb-4 italic">HERE IS YOUR CODE!</h3>
+                <h3 className="font-black text-3xl sm:text-4xl uppercase tracking-tighter mb-4 italic">COLLECT YOUR REWARD HERE</h3>
                 <p className="font-bold text-gray-500 mb-8 italic">Show this at the counter or use it online!</p>
 
                 <div className="relative mb-8 group">
@@ -384,20 +387,20 @@ export default function Quest() {
         )}
       </AnimatePresence>
 
-      <div className="max-w-[1200px] mx-auto px-4 mt-12 pt-8 border-t-[4px] border-black opacity-80 pb-8">
-        <div className="flex flex-col items-center gap-8">
-          <p className="font-black text-xl sm:text-2xl uppercase tracking-tighter italic text-center text-black">Let's chaat about it</p>
+      <div className="max-w-[1200px] mx-auto px-4 mt-12 pt-6 border-t-[4px] border-black opacity-80 pb-6">
+        <div className="flex flex-col items-center gap-6">
+          <p className="font-black text-lg sm:text-2xl uppercase tracking-tighter italic text-center text-black">Let's chaat about it</p>
           
           <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4">
             <a 
               href="https://reguluslabs.in" 
               target="_blank" 
               rel="noreferrer" 
-              className="bg-black text-white px-4 py-1.5 font-black uppercase text-[10px] tracking-widest border-2 border-black hover:bg-secondary hover:text-black transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 inline-block"
+              className="bg-black text-white px-3 py-1 font-black uppercase text-[8px] sm:text-[9px] tracking-widest border border-black hover:bg-secondary hover:text-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 inline-block"
             >
               made by reguluslabs.in
             </a>
-            <div className="font-black uppercase tracking-widest text-[10px] sm:text-xs text-center sm:text-right text-black">© 2025 ONLY CHAATS</div>
+            <div className="font-black uppercase tracking-widest text-[8px] sm:text-[10px] text-center sm:text-right text-black opacity-60">© 2025 ONLY CHAATS</div>
           </div>
         </div>
       </div>

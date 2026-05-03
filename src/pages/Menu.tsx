@@ -80,20 +80,20 @@ export default function Menu() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t-[4px] border-black opacity-80 pb-8">
-          <div className="flex flex-col items-center gap-8">
-            <p className="font-black text-xl sm:text-2xl uppercase tracking-tighter italic text-center text-white drop-shadow-[2px_2px_0_#000]">Let's chaat about it</p>
+        <div className="mt-12 pt-6 border-t-[4px] border-black opacity-80 pb-6">
+          <div className="flex flex-col items-center gap-6">
+            <p className="font-black text-lg sm:text-2xl uppercase tracking-tighter italic text-center text-white drop-shadow-[2px_2px_0_#000]">Let's chaat about it</p>
             
             <div className="w-full flex flex-col sm:flex-row justify-between items-center gap-4">
               <a 
                 href="https://reguluslabs.in" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="bg-black text-white px-4 py-1.5 font-black uppercase text-[10px] tracking-widest border-2 border-white hover:bg-white hover:text-black transition-all shadow-[3px_3px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 inline-block"
+                className="bg-black text-white px-3 py-1 font-black uppercase text-[8px] sm:text-[9px] tracking-widest border border-white hover:bg-white hover:text-black transition-all shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 inline-block"
               >
                 made by reguluslabs.in
               </a>
-              <div className="font-black uppercase tracking-widest text-[10px] sm:text-xs text-center sm:text-right text-white drop-shadow-[1px_1px_0_#000]">© 2025 ONLY CHAATS</div>
+              <div className="font-black uppercase tracking-widest text-[8px] sm:text-[10px] text-center sm:text-right text-white drop-shadow-[1px_1px_0_#000] opacity-60">© 2025 ONLY CHAATS</div>
             </div>
           </div>
         </div>
