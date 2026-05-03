@@ -72,7 +72,6 @@ export default function Home() {
           {/* HERO SECTION (6 cols) */}
           <div className="md:col-span-8 bg-primary border-[4px] border-black p-6 sm:p-12 relative overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] min-h-[350px] sm:min-h-[400px] flex flex-col justify-end">
             <div className="relative z-10">
-              <span className="bg-black text-white px-2 py-0.5 sm:px-3 sm:py-1 font-bold uppercase text-[10px] sm:text-xs tracking-widest mb-3 sm:mb-4 inline-block italic">ESTD 2024</span>
               <h2 className="text-white font-black text-3xl sm:text-6xl uppercase leading-[1] tracking-tighter mb-4 sm:mb-6">
                 WE HAVE GOT A <br className="hidden sm:block" />CHATPATA REWARD <br className="hidden sm:block" />FOR YOU!!!!!!
                 <span className="sm:hidden ml-1">REWARD FOR YOU!!!!!!</span>
