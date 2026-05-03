@@ -19,22 +19,19 @@ import confetti from 'canvas-confetti';
 import { useEffect, useState } from 'react';
 
 // Import logo as a bundled asset
-import logoImg from './images/logo.png';
+const logoImg = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802746/WhatsApp_Image_2026-04-28_at_18.37.52_r6h4ay.jpg";
 
-// For menu images, we're using Unsplash placeholders. 
-// To use local images, move them to src/images/ and use:
-// import img1 from './images/img1.jpeg';
 // Menu images via Unsplash (replace with local files once upload issue is resolved)
-const img1 = "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=800&auto=format&fit=crop";
-const img2 = "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?q=80&w=800&auto=format&fit=crop";
-const img3 = "https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=800&auto=format&fit=crop";
-const img4 = "https://images.unsplash.com/photo-1601050690597-df056fb01793?q=80&w=800&auto=format&fit=crop";
-const img5 = "https://images.unsplash.com/photo-1546539782-6fc531453083?q=80&w=800&auto=format&fit=crop";
-const img6 = "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=800&auto=format&fit=crop";
-const img7 = "https://images.unsplash.com/photo-1599307767316-776533da941c?q=80&w=800&auto=format&fit=crop";
-const img8 = "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?q=80&w=800&auto=format&fit=crop";
-const img9 = "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=800&auto=format&fit=crop";
-const img10 = "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop";
+const img1 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802298/img1_qaqoyx.jpg";
+const img2 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802303/img2_eyyoeh.jpg";
+const img3 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802304/img3_z5yg3f.jpg";
+const img4 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802305/img4_kgrtpz.jpg";
+const img5 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802306/img5_a7goo1.jpg";
+const img6 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802305/img6_dvdeyc.jpg";
+const img7 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802305/img7_esy6qg.jpg";
+const img8 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802305/img8_tvw3ih.jpg";
+const img9 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802307/img9_s7oqbg.jpg";
+const img10 = "https://res.cloudinary.com/dcwl4l70x/image/upload/v1777802306/img10_pba383.jpg";
 
 const menuItems = [
   {
