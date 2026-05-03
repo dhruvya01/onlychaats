@@ -308,10 +308,13 @@ export default function Tasks() {
             <div className="flex items-center gap-3 mb-4">
               <h2 className="font-black text-lg sm:text-xl uppercase tracking-tight">Quick Links</h2>
             </div>
-            <div className="space-y-2">
-              <a href="https://wa.me/917780956163?text=Hey!%20I'm%20interested%20in%20bulk%20party%20orders" target="_blank" rel="noreferrer" className="flex items-center justify-between bg-[#25D366] text-white p-3.5 border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase text-xs hover:shadow-none translate-y-0 hover:translate-y-1 hover:translate-x-1 transition-all">
-                ONLY BULK ORDERS <MessageCircle size={16} strokeWidth={3} fill="currentColor" />
-              </a>
+            <div className="space-y-3">
+              <div className="space-y-1">
+                <a href="https://wa.me/917780956163?text=Hey!%20I'm%20interested%20in%20bulk%20party%20orders" target="_blank" rel="noreferrer" className="flex items-center justify-between bg-[#25D366] text-white p-3.5 border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase text-xs hover:shadow-none translate-y-0 hover:translate-y-1 hover:translate-x-1 transition-all">
+                  ONLY BULK WHATSAPP <MessageCircle size={16} strokeWidth={3} fill="currentColor" />
+                </a>
+                <p className="text-[9px] font-black uppercase text-red-600 italic text-left px-1">only for bulk/ party orders</p>
+              </div>
               <a href="https://www.swiggy.com/menu/1199252?source=sharing" target="_blank" rel="noreferrer" className="flex items-center justify-between bg-[#FC8019] text-white p-3.5 border-[3px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black uppercase text-xs hover:shadow-none translate-y-0 hover:translate-y-1 hover:translate-x-1 transition-all">
                 SWIGGY <ArrowRight size={16} />
               </a>

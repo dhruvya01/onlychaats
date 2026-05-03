@@ -101,8 +101,9 @@ export default function Home() {
                 <MessageCircle size={24} sm:size={32} strokeWidth={3} fill="currentColor" />
               </div>
               <div className="min-w-0">
-                <div className="font-black text-xl sm:text-3xl uppercase tracking-tighter leading-none truncate">ORDER</div>
-                <div className="font-bold text-[10px] sm:text-sm uppercase text-gray-500 truncate">WhatsApp Bulk</div>
+                <div className="font-black text-xl sm:text-3xl uppercase tracking-tighter leading-none truncate">WHATSAPP</div>
+                <div className="font-bold text-[10px] sm:text-sm uppercase text-gray-500 truncate">ONLY BULK</div>
+                <p className="text-[9px] font-black uppercase text-red-600 italic mt-1">only for bulk/ party orders</p>
               </div>
             </a>
             
