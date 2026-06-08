@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, X, MessageCircle, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { Home as HomeIcon, X, MessageCircle, Plus, Minus, ShoppingCart } from 'lucide-react';
 import { logoImg, menuItems } from '../constants';
 import Footer from '../components/Footer';
 
@@ -41,22 +40,20 @@ export default function Menu() {
       {/* Sticky Header */}
       <div className="sticky top-0 z-50 bg-[#618a5e] border-b-4 border-black px-4 sm:px-8 py-4 flex items-center justify-between shadow-[0_4px_0_0_#000]">
         <div className="flex items-center gap-3">
-          <Link to="/" className="w-10 h-10 rounded-full border-[3px] border-black overflow-hidden bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <img alt="Logo" className="w-full h-full object-contain" src={logoImg} />
+          <Link to="/" className="bg-white p-2 border-[3px] border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all">
+             <HomeIcon size={20} />
           </Link>
-          <h1 className="font-black italic text-xl sm:text-2xl tracking-tighter text-white drop-shadow-[2px_2px_0_#ad1110]">
-            ONLY CHAATS MENU
+          <h1 className="font-black italic text-xl sm:text-3xl tracking-tighter text-white drop-shadow-[2px_2px_0_#ad1110]">
+            ONLY CHAATS
           </h1>
         </div>
-        <Link
-          to="/"
-          className="w-10 h-10 bg-primary border-[3px] border-black flex items-center justify-center hover:bg-white hover:text-black text-white transition-all shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-y-0.5 active:translate-x-0.5 active:shadow-none rounded-full"
-        >
-          <X size={24} strokeWidth={3} />
-        </Link>
+        <div className="w-10 h-10 rounded-full border-[3px] border-black overflow-hidden bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+          <img alt="Logo" className="w-full h-full object-contain" src={logoImg} />
+        </div>
       </div>
 
       <div className="max-w-[1400px] mx-auto p-4 sm:p-8">
+        
         {/* Menu Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
           {menuItems.map((item, idx) => (
@@ -121,7 +118,7 @@ export default function Menu() {
           ))}
         </div>
 
-        {/* Floating Action Section for Menu */}
+        {/* Floating Action Section */}
         <div className="mt-16 bg-black text-white p-8 sm:p-12 border-[4px] border-black shadow-[12px_12px_0px_0px_rgba(250,205,28,1)] flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-4">CRAVING THESE?</h2>

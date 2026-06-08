@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -71,23 +70,51 @@ export default function Home() {
         {/* BENTO DASHBOARD GRID */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6">
           
-          {/* HERO SECTION (6 cols) */}
-          <div className="md:col-span-8 bg-primary border-[4px] border-black p-6 sm:p-12 relative overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] min-h-[350px] sm:min-h-[400px] flex flex-col justify-end">
-            <div className="relative z-10">
-              <h2 className="text-white font-black text-3xl sm:text-6xl uppercase leading-[1] tracking-tighter mb-4 sm:mb-6">
-                WE HAVE GOT A <br className="hidden sm:block" />CHATPATA REWARD <br className="hidden sm:block" />FOR YOU!!!!!!
-                <span className="sm:hidden ml-1">REWARD FOR YOU!!!!!!</span>
-              </h2>
-              <p className="text-white/90 font-bold text-base sm:text-lg max-w-md mb-6 sm:mb-8 leading-tight sm:leading-normal">
-                Just complete three simple task and get a free item worth ₹149
-              </p>
-              <Link 
-                to="/tasks"
-                className="bg-secondary text-black border-[4px] border-black px-6 py-3 sm:px-8 sm:py-4 font-black uppercase text-lg sm:text-2xl flex items-center gap-3 sm:gap-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all group w-full sm:w-fit justify-center sm:justify-start"
-              >
-                START TASKS <ArrowRight size={24} sm:size={28} strokeWidth={4} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
+          {/* FOUNDER STORY SECTION */}
+          <div className="md:col-span-8 border-[4px] border-black relative shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden bg-[#FAF9F6] flex min-h-[350px] sm:min-h-[400px]">
+             
+            {/* Grid Pattern Background */}
+            <div 
+              className="absolute inset-0 pointer-events-none opacity-[0.1] z-0" 
+              style={{
+                backgroundImage: 'linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)',
+                backgroundSize: '40px 40px',
+              }}
+            ></div>
+
+            {/* Circular Pink Stamp */}
+            <div className="absolute top-2 left-6 sm:top-4 sm:left-12 md:left-20 z-10 w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] rounded-full bg-[#d2a3a3] overflow-hidden mix-blend-multiply drop-shadow-sm">
+               <div className="w-full h-full opacity-40" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '4px 4px' }}></div>
             </div>
+
+            {/* Logo top right */}
+            <div className="absolute top-2 right-2 md:top-4 md:right-6 z-30 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28">
+              <img src={logoImg} alt="Only Chaats Logo" className="w-full h-full object-contain filter drop-shadow-md bg-white border border-transparent rounded-full" />
+            </div>
+
+            {/* Left Note Content */}
+            <div className="relative z-20 w-[60%] sm:w-[55%] md:w-[60%] p-3 sm:p-6 md:p-8 flex items-center justify-start pb-6">
+               <div className="bg-[#FFFDF9] p-3 sm:p-6 md:p-8 shadow-[6px_6px_15px_rgba(0,0,0,0.06)] w-full">
+                  <div className="space-y-1.5 sm:space-y-3 text-[9px] xs:text-[10px] sm:text-[14px] md:text-[16px] font-medium leading-[1.3] text-[#222] italic" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p>Hi, I'm Aman - chef, food nerd, and a Jammu boy on a mission.</p>
+                    <p className="hidden xs:block">Since childhood, I have been obsessed with chaats—especially golgappas, bhelpuri, and the countless flavors found across India. That passion led me to study hospitality, work in professional kitchens, and set up chaat counters in hotels.</p>
+                    <p className="hidden md:block">Along the way, I discovered something simple: great chaat doesn't need reinvention—it needs authenticity.</p>
+                    <p>Only Chaats is my attempt to bring those traditional flavors, memories, and stories to every plate. Each dish on our menu comes from a real city. A real street. A real culinary tradition.</p>
+                    <p>You just ate a piece of that story. Thank you for being part of it.</p>
+                    <p className="pt-1 sm:pt-2 font-sans not-italic font-black text-[10px] xs:text-xs sm:text-base md:text-xl text-black uppercase tracking-tight">- Only Chaats</p>
+                  </div>
+               </div>
+            </div>
+
+            {/* Founder Cutout */}
+            <div className="absolute bottom-0 right-[-10px] sm:right-0 w-[180px] xs:w-[210px] sm:w-[260px] md:w-[320px] lg:w-[350px] z-10 pointer-events-none drop-shadow-2xl">
+               <img 
+                 src="/aman_founder_nobg.png" 
+                 alt="Founder Aman" 
+                 className="w-full h-auto object-bottom object-contain pointer-events-auto filter drop-shadow-[0_10px_25px_rgba(0,0,0,0.3)] origin-bottom hover:scale-105 transition-transform duration-500" 
+               />
+            </div>
+
           </div>
 
           {/* LIVE STATS (4 cols) */}
@@ -139,6 +166,29 @@ export default function Home() {
                 </div>
               </a>
             </div>
+
+            {/* TASKS WIDGET */}
+            <Link 
+              to="/tasks"
+              className="bg-primary border-[4px] border-black p-4 sm:p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center justify-center text-center hover:-translate-y-1 transition-all group relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-[#e52e2e] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></div>
+              <div className="relative z-10 flex flex-col items-center gap-2">
+                <div className="bg-white border-[3px] border-black px-4 py-1 text-xs font-black uppercase tracking-widest inline-block shadow-[2px_2px_0_0_#000] rotate-[-2deg] group-hover:rotate-0 transition-all">
+                  Chatpata Reward
+                </div>
+                <h3 className="font-black text-white text-2xl sm:text-3xl uppercase tracking-tighter leading-tight mt-2">
+                  Complete Tasks
+                </h3>
+                <p className="font-bold text-white/90 text-[10px] sm:text-xs">
+                  Get a free item worth ₹149!
+                </p>
+                <div className="mt-2 bg-black text-white px-4 py-2 text-xs sm:text-sm font-black border-[2px] border-white uppercase flex items-center gap-2 group-hover:bg-white group-hover:text-black group-hover:border-black transition-colors w-fit mx-auto">
+                  Start Now <ArrowRight size={16} strokeWidth={3} />
+                </div>
+              </div>
+            </Link>
+
           </div>
 
           {/* QUICK LINKS GRID */}
@@ -227,4 +277,3 @@ export default function Home() {
     </div>
   );
 }
-
