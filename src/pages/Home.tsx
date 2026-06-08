@@ -82,32 +82,30 @@ export default function Home() {
               }}
             ></div>
 
-            {/* Circular Pink Stamp */}
-            <div className="absolute top-2 left-6 sm:top-4 sm:left-12 md:left-20 z-10 w-[40px] h-[40px] sm:w-[60px] sm:h-[60px] rounded-full bg-[#d2a3a3] overflow-hidden mix-blend-multiply drop-shadow-sm">
-               <div className="w-full h-full opacity-40" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '4px 4px' }}></div>
-            </div>
-
             {/* Logo top right */}
             <div className="absolute top-2 right-2 md:top-4 md:right-6 z-30 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28">
               <img src={logoImg} alt="Only Chaats Logo" className="w-full h-full object-contain filter drop-shadow-md bg-white border border-transparent rounded-full" />
             </div>
 
             {/* Left Note Content */}
-            <div className="relative z-20 w-[60%] sm:w-[55%] md:w-[60%] p-3 sm:p-6 md:p-8 flex items-center justify-start pb-6">
-               <div className="bg-[#FFFDF9] p-3 sm:p-6 md:p-8 shadow-[6px_6px_15px_rgba(0,0,0,0.06)] w-full">
-                  <div className="space-y-1.5 sm:space-y-3 text-[9px] xs:text-[10px] sm:text-[14px] md:text-[16px] font-medium leading-[1.3] text-[#222] italic" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="relative z-10 w-[75%] sm:w-[70%] md:w-[65%] lg:w-[60%] p-3 sm:p-6 md:p-8 flex items-stretch justify-start pb-6">
+               <div className="bg-[#FFFDF9] p-4 sm:p-5 md:p-8 shadow-[6px_6px_15px_rgba(0,0,0,0.06)] w-full flex flex-col justify-center relative">
+                  
+                  {/* Simple Red Dot Pin */}
+                  <div className="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 w-3.5 h-3.5 sm:w-5 sm:h-5 rounded-full bg-[#E52E2E] border-2 border-white shadow-[0_2px_4px_rgba(0,0,0,0.2)] z-20"></div>
+                  <div className="space-y-2 sm:space-y-3 text-[11px] xs:text-[12px] sm:text-[15px] md:text-[16px] lg:text-[17px] font-medium leading-[1.4] text-[#222] italic pr-[20px] xs:pr-[30px] sm:pr-[50px] md:pr-[70px] lg:pr-[90px]" style={{ fontFamily: 'Georgia, serif' }}>
                     <p>Hi, I'm Aman - chef, food nerd, and a Jammu boy on a mission.</p>
                     <p className="hidden xs:block">Since childhood, I have been obsessed with chaats—especially golgappas, bhelpuri, and the countless flavors found across India. That passion led me to study hospitality, work in professional kitchens, and set up chaat counters in hotels.</p>
                     <p className="hidden md:block">Along the way, I discovered something simple: great chaat doesn't need reinvention—it needs authenticity.</p>
                     <p>Only Chaats is my attempt to bring those traditional flavors, memories, and stories to every plate. Each dish on our menu comes from a real city. A real street. A real culinary tradition.</p>
                     <p>You just ate a piece of that story. Thank you for being part of it.</p>
-                    <p className="pt-1 sm:pt-2 font-sans not-italic font-black text-[10px] xs:text-xs sm:text-base md:text-xl text-black uppercase tracking-tight">- Only Chaats</p>
+                    <p className="pt-1 sm:pt-2 font-sans not-italic font-black text-[11px] xs:text-xs sm:text-base md:text-xl text-black uppercase tracking-tight">- Only Chaats</p>
                   </div>
                </div>
             </div>
 
             {/* Founder Cutout */}
-            <div className="absolute bottom-0 right-[-10px] sm:right-0 w-[180px] xs:w-[210px] sm:w-[260px] md:w-[320px] lg:w-[350px] z-10 pointer-events-none drop-shadow-2xl">
+            <div className="absolute bottom-0 right-[4px] sm:right-[10px] md:right-[20px] lg:right-[30px] w-[140px] xs:w-[170px] sm:w-[220px] md:w-[280px] lg:w-[320px] z-20 pointer-events-none drop-shadow-2xl">
                <img 
                  src="/aman_founder_nobg.png" 
                  alt="Founder Aman" 
